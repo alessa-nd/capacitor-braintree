@@ -25,10 +25,10 @@ export interface DropInResult {
   type: string;
   localizedDescription: string;
   deviceData: string;
-  card: {
-    lastTwo: string;
-    network: string;
-  };
+  // card: {
+  //   lastTwo: string;
+  //   network: string;
+  // };
   payPalAccount: {
     email: string;
     firstName: string;
@@ -39,14 +39,14 @@ export interface DropInResult {
     clientMetadataId: string;
     payerId: string;
   };
-  applePaycard: any;
+  // applePaycard: any;
   threeDSecureCard: {
     liabilityShifted: boolean;
     liabilityShiftPossible: boolean;
   };
-  venmoAccount: {
-    username: string;
-  };
+  // venmoAccount: {
+  //   username: string;
+  // };
 }
 
 export interface BraintreePlugin {
