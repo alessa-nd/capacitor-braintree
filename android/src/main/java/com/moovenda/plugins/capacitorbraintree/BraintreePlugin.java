@@ -105,7 +105,7 @@ public class BraintreePlugin extends Plugin {
             .streetAddress(call.getString("streetAddress"))
             .locality(call.getString("locality"))
             .postalCode(call.getString("postalCode"))
-            .countryCodeAlpha2(call.getString("countryCodeAlpha2"));
+            .countryCodeAlpha2(call.getString("countryCodeAlpha2"))
             .disabled(call.getStringArray("disabled"));
         ThreeDSecureAdditionalInformation additionalInformation = new ThreeDSecureAdditionalInformation()
            .shippingAddress(address);
