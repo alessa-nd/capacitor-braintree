@@ -113,8 +113,7 @@ public class BraintreePlugin extends Plugin {
             .email(call.getString("email"))
             .billingAddress(address)
             .versionRequested(ThreeDSecureRequest.VERSION_2)
-            .additionalInformation(additionalInformation)
-            .disabled(call.getStringArray("disabled"));
+            .additionalInformation(additionalInformation);
         DropInRequest dropInRequest = new DropInRequest()
             .clientToken(this.clientToken)
             .cardholderNameStatus(CardForm.FIELD_REQUIRED)
@@ -187,15 +186,15 @@ public class BraintreePlugin extends Plugin {
         // resultMap.put("deviceData", deviceData);
 
         // Card
-        if (paymentMethodNonce instanceof CardNonce) {
-            CardNonce cardNonce = (CardNonce)paymentMethodNonce;
+        // if (paymentMethodNonce instanceof CardNonce) {
+        //     CardNonce cardNonce = (CardNonce)paymentMethodNonce;
 
-            JSObject innerMap = new JSObject();
-            innerMap.put("lastTwo", cardNonce.getLastTwo());
-            innerMap.put("network", cardNonce.getCardType());
+        //     JSObject innerMap = new JSObject();
+        //     innerMap.put("lastTwo", cardNonce.getLastTwo());
+        //     innerMap.put("network", cardNonce.getCardType());
 
-            resultMap.put("card", innerMap);
-        }
+        //     resultMap.put("card", innerMap);
+        // }
 
         // PayPal
         if (paymentMethodNonce instanceof PayPalAccountNonce) {
