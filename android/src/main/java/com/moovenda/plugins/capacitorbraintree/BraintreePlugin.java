@@ -119,7 +119,8 @@ public class BraintreePlugin extends Plugin {
             .cardholderNameStatus(CardForm.FIELD_REQUIRED)
             .requestThreeDSecureVerification(true)
             .collectDeviceData(true)
-            .threeDSecureRequest(threeDSecureRequest);
+            .threeDSecureRequest(threeDSecureRequest)
+            .disableCard();
         Intent intent = dropInRequest.getIntent(getContext());
 
         Log.d(PLUGIN_TAG, "showDropIn started");
