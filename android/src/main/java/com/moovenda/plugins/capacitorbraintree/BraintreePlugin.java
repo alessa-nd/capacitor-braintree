@@ -105,8 +105,7 @@ public class BraintreePlugin extends Plugin {
             .streetAddress(call.getString("streetAddress"))
             .locality(call.getString("locality"))
             .postalCode(call.getString("postalCode"))
-            .countryCodeAlpha2(call.getString("countryCodeAlpha2"))
-            .disabled(call.getStringArray("disabled"));
+            .countryCodeAlpha2(call.getString("countryCodeAlpha2"));
         ThreeDSecureAdditionalInformation additionalInformation = new ThreeDSecureAdditionalInformation()
            .shippingAddress(address);
         ThreeDSecureRequest threeDSecureRequest = new ThreeDSecureRequest()
@@ -114,7 +113,8 @@ public class BraintreePlugin extends Plugin {
             .email(call.getString("email"))
             .billingAddress(address)
             .versionRequested(ThreeDSecureRequest.VERSION_2)
-            .additionalInformation(additionalInformation);
+            .additionalInformation(additionalInformation)
+            .disabled(call.getStringArray("disabled"));
         DropInRequest dropInRequest = new DropInRequest()
             .clientToken(this.clientToken)
             .cardholderNameStatus(CardForm.FIELD_REQUIRED)
